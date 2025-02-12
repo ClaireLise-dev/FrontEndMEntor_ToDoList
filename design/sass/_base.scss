@@ -1,0 +1,30 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: v.$lightBg url(../../images/bg-desktop-light.jpg) no-repeat;
+  background-size: 100% 300px;
+  font-family: v.$fontPrimary;
+  font-size: v.$fontSize;
+  font-weight: v.$fontWeightRegular;
+  height: 100vh;
+  padding-top: 50px;
+  @include m.flex(column, flex-start, center);
+}
+
+h1 {
+  color: white;
+}
+
+.container {
+  width: 540px;
+  height: auto;
+  margin: auto;
+  @include m.flex;
+}

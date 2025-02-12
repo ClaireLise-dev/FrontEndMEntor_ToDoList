@@ -1,0 +1,26 @@
+// Primary Colors
+$brightBlue: hsl(220, 98%, 61%);
+$checkBackground: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+// Light Theme
+$lightBg: hsl(0, 0%, 98%);
+$lightGrayishBg: hsl(236, 33%, 92%);
+$lightGrayishBlue: hsl(233, 11%, 84%);
+$darkGrayishBlueLight: hsl(236, 9%, 61%);
+$veryDarkGrayishBlueLight: hsl(235, 19%, 35%);
+
+// Dark Theme
+$darkBg: hsl(235, 21%, 11%);
+$darkDesaturatedBlue: hsl(235, 24%, 19%);
+$lightGrayishBlueDark: hsl(234, 39%, 85%);
+$lightGrayishBlueHover: hsl(236, 33%, 92%);
+$darkGrayishBlueDark: hsl(234, 11%, 52%);
+$veryDarkGrayishBlueDark: hsl(233, 14%, 35%);
+$veryDarkGrayishBlueDarkAlt: hsl(237, 14%, 26%);
+
+// Typo
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+$fontPrimary: "Josefin Sans", sans-serif;
+$fontWeightRegular: 400;
+$fontWeightBold: 700;
+$fontSize: 18px;

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./design/css/default.css">
+
+  <title>Frontend Mentor | Todo app</title>
+
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="headerContent">
+        <h1>TODO</h1>
+        <button id="themeButton" class="themeToggle" aria-label="Toggle Dark Mode">
+          <img src="./images/icon-moon.svg" id="themeIcon" alt="Dark mode">
+        </button>
+      </div>
+      <form id="taskForm">
+        <label for="newTask"></label>
+        <div class="taskInputContainer">
+          <input id="newTask" type="text" placeholder="Create a new todo">
+        </div>
+      </form>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <ul id="tasksList">
+        <li class="task">
+          <span class="customCheckbox"></span>
+          <span>Jog around the park 3x</span>
+        </li>
+        <li class="task">
+          <span class="customCheckbox"></span>
+          <span>Jog around the park 3x</span>
+        </li>
+        <li class="task">
+          <span class="customCheckbox"></span>
+          <span>Jog around the park 3x</span>
+        </li>
+        <li class="task">
+          <span class="customCheckbox"></span>
+          <span>Jog around the park 3x</span>
+        </li>
+        <li class="task">
+          <span class="customCheckbox"></span>
+          <span>Jog around the park 3x</span>
+        </li>
+      </ul>
+      <div class="tasksFilters">
+        <p><span id="tasksLeft">5</span> items left</p>
+        <div id="bottomTasksButtons">
+          <button class="tasksButton">All</button>
+          <button class="tasksButton">Active</button>
+          <button class="tasksButton">Completed</button>
+        </div>
+        <div id="clearButton"><button class="tasksButton">Clear Completed</button>
+        </div>
+      </div>
+    </div>
+    <div id="bottomText" class="container">
+      <p>Drag and drop tasks</p>
+    </div>
+  </section>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>

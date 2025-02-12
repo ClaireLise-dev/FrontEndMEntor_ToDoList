@@ -1,0 +1,54 @@
+@use "mixins" as m;
+@use "variables" as v;
+
+header {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.headerContent {
+  width: 540px;
+  margin: 40px auto;
+  @include m.flex(row, space-between, center);
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.taskInputContainer {
+  position: relative;
+  width: 100%;
+}
+
+#newTask {
+  width: 540px;
+  padding: 15px 15px 15px 54px;
+  font-size: v.$fontSize;
+  border: none;
+  border-radius: 5px;
+  background-color: v.$lightBg;
+  color: v.$darkGrayishBlueLight;
+  outline: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.taskInputContainer::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid v.$lightGrayishBg;
+  background-color: transparent;
+}
