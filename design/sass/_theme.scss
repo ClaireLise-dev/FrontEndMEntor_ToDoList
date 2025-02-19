@@ -1,0 +1,41 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.darkTheme {
+  background: v.$darkBg url(../../images/bg-desktop-dark.jpg) no-repeat;
+
+  .taskInputContainer {
+    #newTask {
+      background: v.$darkDesaturatedBlue;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .tasksContainer {
+    background: v.$darkDesaturatedBlue;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+
+    .task {
+      color: v.$lightGrayishBlueDark;
+      border-bottom: 1px solid v.$veryDarkGrayishBlueDark;
+    }
+
+    .taskCompleted {
+      color: v.$darkGrayishBlueDark;
+      text-decoration: line-through;
+      border-bottom: 1px solid v.$veryDarkGrayishBlueDark;
+    }
+  }
+
+  .tasksFilters {
+    color: v.$darkGrayishBlueDark;
+  }
+
+  .tasksButton {
+    color: v.$darkGrayishBlueDark;
+
+    &:hover {
+      color: v.$lightGrayishBlueHover;
+    }
+  }
+}

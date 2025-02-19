@@ -8,7 +8,7 @@
   #newTask {
     @include m.boxStyle;
     width: 540px;
-    padding: 15px 20px 15px 59px;
+    padding: 15px 25px 15px 59px;
     font-size: v.$fontSize;
     border: none;
     color: v.$darkGrayishBlueLight;
@@ -24,12 +24,7 @@
   @include m.boxStyle;
 
   .task {
-    position: relative;
-    width: 540px;
-    list-style: none;
-    padding: 15px 20px 15px 59px;
-    cursor: pointer;
-    border-bottom: solid 1px v.$lightGrayishBg;
+    @include m.task;
 
     .customCheckbox {
       width: 540px;
@@ -37,12 +32,37 @@
       @include m.circle();
     }
   }
+
+  .taskCompleted {
+    @include m.task;
+    text-decoration: line-through;
+    color: v.$darkGrayishBlueLight;
+
+    .customCheckbox {
+      width: 540px;
+      cursor: pointer;
+      @include m.circle(v.$checkBackground, transparent);
+      background-clip: padding-box;
+
+      &::after {
+        content: "";
+        background: url("../../images/icon-check.svg") no-repeat center;
+        background-size: contain;
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
 }
 
 .tasksFilters {
   color: v.$veryDarkGrayishBlueLight;
   width: 100%;
-  padding: 20px;
+  padding: 15px 20px;
   font-size: 14px;
   @include m.flex(row, space-between, center);
 
@@ -64,12 +84,12 @@
 }
 
 #bottomTasksButtons {
-  width: 160px;
+  width: 166px;
   @include m.flex(row, space-between, center);
 }
 
 #bottomText {
   margin: 45px auto;
-  width: 540px;
+  font-size: 14px;
   color: v.$veryDarkGrayishBlueLight;
 }

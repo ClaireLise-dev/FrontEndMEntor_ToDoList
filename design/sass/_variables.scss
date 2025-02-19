@@ -1,6 +1,10 @@
 // Primary Colors
 $brightBlue: hsl(220, 98%, 61%);
-$checkBackground: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+$checkBackground: linear-gradient(
+  135deg,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
 
 // Light Theme
 $lightBg: hsl(0, 0%, 98%);
