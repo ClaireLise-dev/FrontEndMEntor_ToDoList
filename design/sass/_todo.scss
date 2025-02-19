@@ -1,0 +1,75 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.taskInputContainer {
+  position: relative;
+  width: 100%;
+
+  #newTask {
+    @include m.boxStyle;
+    width: 540px;
+    padding: 15px 20px 15px 59px;
+    font-size: v.$fontSize;
+    border: none;
+    color: v.$darkGrayishBlueLight;
+    outline: none;
+  }
+}
+
+.taskInputContainer::before {
+  @include m.circle();
+}
+
+.tasksContainer {
+  @include m.boxStyle;
+
+  .task {
+    position: relative;
+    width: 540px;
+    list-style: none;
+    padding: 15px 20px 15px 59px;
+    cursor: pointer;
+    border-bottom: solid 1px v.$lightGrayishBg;
+
+    .customCheckbox {
+      width: 540px;
+      cursor: pointer;
+      @include m.circle();
+    }
+  }
+}
+
+.tasksFilters {
+  color: v.$veryDarkGrayishBlueLight;
+  width: 100%;
+  padding: 20px;
+  font-size: 14px;
+  @include m.flex(row, space-between, center);
+
+  .tasksButton {
+    background: transparent;
+    border: none;
+    font-family: v.$fontPrimary;
+    color: v.$veryDarkGrayishBlueLight;
+    cursor: pointer;
+
+    &:hover {
+      color: v.$brightBlue;
+    }
+  }
+}
+
+.tasksButtonsPrincipals {
+  font-weight: v.$fontWeightBold;
+}
+
+#bottomTasksButtons {
+  width: 160px;
+  @include m.flex(row, space-between, center);
+}
+
+#bottomText {
+  margin: 45px auto;
+  width: 540px;
+  color: v.$veryDarkGrayishBlueLight;
+}
