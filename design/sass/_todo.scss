@@ -25,9 +25,9 @@
 
   .task {
     @include m.task;
+    width: 540px;
 
     .customCheckbox {
-      width: 540px;
       cursor: pointer;
       @include m.circle();
     }
@@ -61,7 +61,6 @@
   color: v.$veryDarkGrayishBlueLight;
   width: 100%;
   padding: 15px 20px;
-  font-size: 14px;
   @include m.flex(row, space-between, center);
 
   .tasksButton {
@@ -70,20 +69,51 @@
     font-family: v.$fontPrimary;
     color: v.$veryDarkGrayishBlueLight;
     cursor: pointer;
-
     &:hover {
       color: v.$brightBlue;
     }
   }
-}
-
-.tasksButtonsPrincipals {
-  font-weight: v.$fontWeightBold;
+  & p {
+    font-size: 14px;
+  }
+  #clearButton {
+    font-size: 14px;
+  }
 }
 
 #bottomTasksButtons {
-  width: 166px;
   @include m.flex(row, space-between, center);
+  gap: 15px;
+
+  .tasksButtonsPrincipals {
+    font-weight: v.$fontWeightBold;
+    font-size: 14px;
+  }
+}
+
+#mobileButtonsContainer {
+  display: none;
+  gap: 15px;
+  padding: 15px;
+  margin-top: 24px;
+  width: 330px;
+  @include m.boxStyle;
+
+  .tasksButton {
+    background: transparent;
+    border: none;
+    font-family: v.$fontPrimary;
+    color: v.$veryDarkGrayishBlueLight;
+    cursor: pointer;
+    &:hover {
+      color: v.$brightBlue;
+    }
+  }
+
+  .tasksButtonsPrincipals {
+    font-weight: v.$fontWeightBold;
+    font-size: 14px;
+  }
 }
 
 #bottomText {

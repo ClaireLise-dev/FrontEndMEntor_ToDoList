@@ -1,0 +1,82 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+
+  .container {
+    width: 330px;
+  }
+
+  .headerContent {
+    width: 330px;
+  }
+
+  .taskInputContainer {
+    #newTask {
+      width: 330px;
+      font-size: 12px;
+    }
+  }
+
+  .taskInputContainer::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tasksContainer {
+    .task,
+    .taskCompleted {
+      width: 330px;
+      .customCheckbox {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .task .customCheckbox {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .tasksFilters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    & p {
+      font-size: 12px;
+    }
+    #clearButton {
+      font-size: 12px;
+    }
+  }
+
+  #bottomTasksButtons {
+    display: none;
+  }
+
+  #mobileButtonsContainer {
+    @include m.flex(row, center, center);
+  }
+
+  //   #bottomTasksButtons {
+  //     position: absolute;
+  //     bottom: -70px;
+  //     left: 50%;
+  //     transform: translateX(-50%);
+  //     width: 100%;
+  //     display: flex;
+  //     justify-content: center;
+  //     gap: 40px;
+  //     padding: 15px;
+  //     @include m.boxStyle;
+  //   }
+
+  //   .tasksContainer {
+  //     position: relative; // Permet de positionner #bottomTasksButtons par rapport à ce bloc
+  //   }
+}
