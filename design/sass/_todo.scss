@@ -34,13 +34,11 @@
   }
 
   .taskCompleted {
-    @include m.task;
+    @extend .task;
     text-decoration: line-through;
     color: v.$darkGrayishBlueLight;
 
     .customCheckbox {
-      width: 540px;
-      cursor: pointer;
       @include m.circle(v.$checkBackground, transparent);
       background-clip: padding-box;
 

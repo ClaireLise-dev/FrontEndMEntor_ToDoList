@@ -11,6 +11,13 @@
     }
   }
 
+  .taskInputContainer::before {
+    @include m.circle(
+      $bgColor: transparent,
+      $borderColor: v.$veryDarkGrayishBlueDark
+    );
+  }
+
   .tasksContainer {
     background: v.$darkDesaturatedBlue;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
@@ -18,6 +25,12 @@
     .task {
       color: v.$lightGrayishBlueDark;
       border-bottom: 1px solid v.$veryDarkGrayishBlueDark;
+      .customCheckbox {
+        @include m.circle(
+          $bgColor: transparent,
+          $borderColor: v.$veryDarkGrayishBlueDark
+        );
+      }
     }
 
     .taskCompleted {
@@ -33,9 +46,5 @@
 
   .tasksButton {
     color: v.$darkGrayishBlueDark;
-
-    &:hover {
-      color: v.$lightGrayishBlueHover;
-    }
   }
 }

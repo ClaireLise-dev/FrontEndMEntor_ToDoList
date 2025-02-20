@@ -13,7 +13,7 @@ body {
   font-family: v.$fontPrimary;
   font-size: v.$fontSize;
   font-weight: v.$fontWeightRegular;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 50px;
   @include m.flex(column, flex-start, center);
 }
@@ -23,7 +23,8 @@ h1 {
 }
 
 .container {
-  width: 540px;
+  max-width: 540px;
+  width: 100%;
   height: auto;
   margin: auto;
   @include m.flex;
