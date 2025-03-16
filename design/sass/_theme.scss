@@ -12,10 +12,7 @@
   }
 
   .taskInputContainer::before {
-    @include m.circle(
-      $bgColor: transparent,
-      $borderColor: v.$veryDarkGrayishBlueDark
-    );
+    @include m.circle(transparent, v.$veryDarkGrayishBlueDark);
   }
 
   .tasksContainer {
@@ -25,11 +22,9 @@
     .task {
       color: v.$lightGrayishBlueDark;
       border-bottom: 1px solid v.$veryDarkGrayishBlueDark;
+
       .customCheckbox {
-        @include m.circle(
-          $bgColor: transparent,
-          $borderColor: v.$veryDarkGrayishBlueDark
-        );
+        @include m.circle(transparent, v.$veryDarkGrayishBlueDark);
       }
     }
 
@@ -37,20 +32,37 @@
       color: v.$darkGrayishBlueDark;
       text-decoration: line-through;
       border-bottom: 1px solid v.$veryDarkGrayishBlueDark;
+
+      .customCheckbox {
+        @include m.circle(v.$checkBackground, transparent);
+        background-clip: padding-box;
+
+        &::after {
+          content: "";
+          background: url("../../images/icon-check.svg") no-repeat center;
+          background-size: contain;
+          position: absolute;
+          width: 50%;
+          height: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
     }
-  }
 
-  .tasksFilters {
-    color: v.$darkGrayishBlueDark;
-  }
+    .tasksFilters {
+      color: v.$darkGrayishBlueDark;
+    }
 
-  .tasksButton {
-    color: v.$darkGrayishBlueDark;
-  }
+    .tasksButton {
+      color: v.$darkGrayishBlueDark;
+    }
 
-  #mobileButtonsContainer {
-    background: v.$darkDesaturatedBlue;
-    color: v.$darkGrayishBlueDark;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    #mobileButtonsContainer {
+      background: v.$darkDesaturatedBlue;
+      color: v.$darkGrayishBlueDark;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    }
   }
 }

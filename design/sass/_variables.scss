@@ -21,6 +21,11 @@ $lightGrayishBlueHover: hsl(236, 33%, 92%);
 $darkGrayishBlueDark: hsl(234, 11%, 52%);
 $veryDarkGrayishBlueDark: hsl(233, 14%, 35%);
 $veryDarkGrayishBlueDarkAlt: hsl(237, 14%, 26%);
+$checkBackground: linear-gradient(
+  135deg,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
 
 // Typo
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");

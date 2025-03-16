@@ -16,10 +16,6 @@
   }
 }
 
-.taskInputContainer::before {
-  @include m.circle();
-}
-
 .tasksContainer {
   @include m.boxStyle;
 
