@@ -50,6 +50,12 @@
         }
       }
     }
+  }
+
+  #mobileButtonsContainer {
+    background: v.$darkDesaturatedBlue;
+    color: v.$darkGrayishBlueDark;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
 
     .tasksFilters {
       color: v.$darkGrayishBlueDark;
@@ -57,12 +63,9 @@
 
     .tasksButton {
       color: v.$darkGrayishBlueDark;
-    }
-
-    #mobileButtonsContainer {
-      background: v.$darkDesaturatedBlue;
-      color: v.$darkGrayishBlueDark;
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+      &:hover {
+        color: v.$brightBlue;
+      }
     }
   }
 }

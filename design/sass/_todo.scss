@@ -16,6 +16,10 @@
   }
 }
 
+.taskInputContainer::before {
+  @include m.circle(transparent, v.$lightGrayishBg);
+}
+
 .tasksContainer {
   @include m.boxStyle;
 

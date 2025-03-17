@@ -29,37 +29,14 @@
   <section>
     <div class="container tasksContainer">
       <ul id="tasksList">
-        <li class="taskCompleted">
-          <span class="customCheckbox"></span>
-          <span>Complete online Javascript course</span>
-        </li>
-        <li class="task">
-          <span class="customCheckbox"></span>
-          <span>Jog around the park 3x</span>
-        </li>
-        <li class="task">
-          <span class="customCheckbox"></span>
-          <span>10 minutes meditation</span>
-        </li>
-        <li class="task">
-          <span class="customCheckbox"></span>
-          <span>Read for 1h</span>
-        </li>
-        <li class="task">
-          <span class="customCheckbox"></span>
-          <span>Pick up grocerie</span>
-        </li>
-        <li class="task">
-          <span class="customCheckbox"></span>
-          <span>Complete todoapp Frontend Mentor</span>
-        </li>
+
       </ul>
       <div class="tasksFilters">
         <p><span id="tasksLeft">5</span> items left</p>
         <div id="bottomTasksButtons">
-          <button class="tasksButton tasksButtonsPrincipals">All</button>
-          <button class="tasksButton tasksButtonsPrincipals">Active</button>
-          <button class="tasksButton tasksButtonsPrincipals">Completed</button>
+          <button class="tasksButton tasksButtonsPrincipals buttonAll">All</button>
+          <button class="tasksButton tasksButtonsPrincipals buttonActive" id="buttonActive">Active</button>
+          <button class="tasksButton tasksButtonsPrincipals buttonCompleted" id="buttonCompleted">Completed</button>
         </div>
         <div><button id="clearButton" class="tasksButton">Clear Completed</button>
         </div>
@@ -67,9 +44,9 @@
     </div>
 
     <div id="mobileButtonsContainer">
-      <button class="tasksButton tasksButtonsPrincipals">All</button>
-      <button class="tasksButton tasksButtonsPrincipals">Active</button>
-      <button class="tasksButton tasksButtonsPrincipals">Completed</button>
+      <button class="tasksButton tasksButtonsPrincipals buttonAll">All</button>
+      <button class="tasksButton tasksButtonsPrincipals buttonActive" id="buttonActive">Active</button>
+      <button class="tasksButton tasksButtonsPrincipals buttonCompleted" id="buttonCompleted">Completed</button>
     </div>
     <div id="bottomText" class="container">
       <p>Drag and drop to reorder tasks</p>
