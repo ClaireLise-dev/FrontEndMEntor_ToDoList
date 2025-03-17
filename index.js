@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-//Fonctions
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
@@ -57,7 +56,7 @@ function addTaskToDom(task, prepend = true) {
     <span>${task.text}</span>
   `;
   if (prepend) {
-    taskList.prepend(addTask);
+    taskList.insertBefore(addTask, taskList.firstChild);
   } else {
     taskList.appendChild(addTask);
   }
@@ -80,39 +79,6 @@ function loadTasks(filter = "all") {
   addDragAndDrop();
 }
 
-function addDragAndDrop() {
-  const taskItems = document.querySelectorAll(".task");
-  let draggedItem = null;
-
-  taskItems.forEach((task) => {
-    task.addEventListener("dragstart", (e) => {
-      draggedItem = task;
-      e.dataTransfer.effectAllowed = "move";
-    });
-
-    task.addEventListener("dragover", (e) => {
-      e.preventDefault();
-    });
-
-    task.addEventListener("drop", (e) => {
-      e.preventDefault();
-      if (draggedItem && draggedItem !== task) {
-        taskList.insertBefore(draggedItem, task);
-        updateTaskOrder();
-      }
-    });
-  });
-}
-
-function updateTaskOrder() {
-  tasks = Array.from(taskList.children).map((task, index) => {
-    const taskId = parseInt(task.dataset.id, 10);
-    return tasks.find((t) => t.id === taskId);
-  });
-  saveTasks();
-}
-
-//Evènements
 if (taskForm) {
   taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -125,7 +91,7 @@ if (taskForm) {
       };
       tasks.unshift(task);
       saveTasks();
-      loadTasks("all");
+      addTaskToDom(task, true);
       newTask.value = "";
     }
   });
@@ -163,4 +129,38 @@ if (clearCompletedButton) {
     saveTasks();
     loadTasks("all");
   });
+}
+
+function addDragAndDrop() {
+  const taskItems = document.querySelectorAll(".task");
+  let draggedItem = null;
+
+  taskItems.forEach((task) => {
+    task.addEventListener("dragstart", (e) => {
+      draggedItem = task;
+      e.dataTransfer.effectAllowed = "move";
+    });
+
+    task.addEventListener("dragover", (e) => {
+      e.preventDefault();
+    });
+
+    task.addEventListener("drop", (e) => {
+      e.preventDefault();
+      if (draggedItem && draggedItem !== task) {
+        taskList.insertBefore(draggedItem, task);
+        updateTaskOrder();
+      }
+    });
+  });
+}
+
+function updateTaskOrder() {
+  tasks = Array.from(taskList.children)
+    .map((task) => {
+      const taskId = parseInt(task.dataset.id, 10);
+      return tasks.find((t) => t.id === taskId);
+    })
+    .filter((task) => task !== undefined);
+  saveTasks();
 }
